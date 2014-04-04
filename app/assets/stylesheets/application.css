@@ -12,3 +12,12 @@
  *= require_tree .
  *= require 'bootstrap'
  */
+
+a#delete {
+ color: red;
+ text-decoration: none;
+}
+
+.post-content {
+  background-color: grey;
+}

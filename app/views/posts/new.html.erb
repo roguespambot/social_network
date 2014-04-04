@@ -1,0 +1,7 @@
+<h2>New Blog Post by <%= @author.name%></h2>
+<% @recipient = @author %>
+
+<form action="/posts/" method="post">
+  <%= render('form') %>
+  <button>Post!</button>
+</form>
