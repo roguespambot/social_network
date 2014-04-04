@@ -1,0 +1,18 @@
+<h1><%= @user.name %></h1>
+<br/>
+<br/>
+
+<form action="/users/<%= @user.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <%= render("form") %>
+  <button>Update!</button>
+</form>
+
+<br/>
+<br/>
+
+<p><a href="/users/<%= @user.id %>"
+  data-confirm="Are you sure?"
+  data-method="delete"
+  rel="nofollow">Delete User</a>
+</p>
