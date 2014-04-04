@@ -1,0 +1,8 @@
+README
+======
+
+Network
+-------
+
+As a user I want to have friends that are other users.
+As an evil corporation I want to be able to create and destroy users.

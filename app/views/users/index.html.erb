@@ -1,0 +1,21 @@
+<h1>All Users</h1>
+
+<ul>
+<% @users.each do |user| %>
+  <li><a href="/users/<%=user.id%>"><%= user.name %></a></li>
+<% end %>
+</ul>
+
+<% if @user.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/users/" method="post">
+  <%= render('form') %>
+  <button>Add User</button>
+</form>

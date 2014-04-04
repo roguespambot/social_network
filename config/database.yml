@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: network_development
+
+test:
+  adapter: postgresql
+  database: network_test
