@@ -2,19 +2,21 @@
 
 <h3>Posts</h3>
 
-  <% @user.posts.each_with_index do |post, index| %>
+  <% @user.posts.reverse.each_with_index do |post, index| %>
     <% if index % 2 == 0  %>
-      <div class="post-content"><%= simple_format(post.content) %>
+      <div class="post-content"><p><b><%= post.title %></b></p><%= simple_format(post.content) %>
 
     <% else %>
-      <div class="post-content2"><%= simple_format(post.content) %>
+      <div class="post-content2"><p><b><%= post.title %></b></p><%= simple_format(post.content) %>
     <% end %>
 
     <div class="poster">
-        <p>Posted by:<a id="poster" href="/posts/<%= post.author.id %>"> <%= post.author.name %></a></p>
+        <p>Posted by:<a id="poster" href="/posts/<%= post.author.id %>"> <%= post.author.name %></a><br /> on <%= post.created_at.strftime("%b %d, %Y at %I:%M %P GMT")  %> </p>
       </div>
 
       <div class="delete_post">
+        <br/>
+        <a id="edit" href="/posts/<%= post.id%>/edit">[Edit Post]</a>
         <a id="delete" href="/posts/<%= post.id %>"
           data-confirm="Are you sure you want to delete this post?"
           data-method="delete"

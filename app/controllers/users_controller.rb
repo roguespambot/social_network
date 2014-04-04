@@ -34,6 +34,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    posts = Post.where(:author_id => @user.id)
+    posts.each { |post| post.destroy }
     @user.destroy
     redirect_to("/users/")
   end

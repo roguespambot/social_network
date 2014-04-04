@@ -1,10 +1,18 @@
 <input type="hidden" name="posts[recipient_id]" value="<%= @recipient.id %>">
-<select name="posts[author_id]">
-    <option selected disabled>Select your name</option>
-  <% @recipient.friends.each do |friend| %>
-    <option value="<%= friend.id %>"><%= friend.name %></option>
-  <% end %>
-</select>
+<% if @post.author_id %>
+  <input type="hidden" name="posts[author_id]" value="<%= @post.author_id %>">
+<% else %>
+  <select name="posts[author_id]">
+      <option selected disabled>Select your name:</option>
+      <option value="<%= @recipient.id %>"><%= @recipient.name %></option>
+    <% @recipient.friends.each do |friend| %>
+      <option value="<%= friend.id %>"><%= friend.name %></option>
+    <% end %>
+  </select>
+<% end %>
+<br/>
+<br/>
+<input id="post_title" type="text" name="posts[title]" placeholder="Title" value="<%= @post.title %>">
 <br/>
 <br/>
 <textarea id="post_content" rows="15" cols="100" name="posts[content]" placeholder="What's on your mind?"><%= @post.content %></textarea>

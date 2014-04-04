@@ -8,6 +8,8 @@ Network
 [+] As a user, I want to have friends that are other users.
 [+] As a user, I want to see a list of all of my friends.
 [+] As a user, I want to be able to destroy my friendships.
-[-] As a user, I want to make blog posts on my own page.
-[-] As a user, I want to make posts on my friend's page.
+[+] As a user, I want to make blog posts on my own page.
+[+] As a user, I want to make posts on my friend's page.
+[+] As a user, I want to be able to delete a post.
+[-] As a user, I want to be able to edit a post.
 

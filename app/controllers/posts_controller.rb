@@ -15,6 +15,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+    @recipient = Recipient.find(@post.recipient.id)
+    render('posts/edit.html.erb')
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.save
+      redirect_to("/users/#{@post.recipient_id}/")
+    else
+      @recipient = Recipient.find(@post.recipient_id)
+      render('posts/edit.html.erb')
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy

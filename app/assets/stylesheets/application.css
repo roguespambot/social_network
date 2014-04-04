@@ -13,16 +13,6 @@
  *= require 'bootstrap'
  */
 
-body {
-  background-color: #99CCFF;
-}
-
-h1 {
-}
-
-.post {
-}
-
 .poster {
   float: left;
   margin-right: 2px;
@@ -51,16 +41,16 @@ a#delete-friend {
   background-color: #CCCCCC;
   margin-top: 10px;
   margin-bottom: 10px;
-  min-width: 300px;
+  min-width: 400px;
   max-width: 75%;
   padding: 2px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .post-content2 {
   padding: 2px;
   background-color: #99CCFF;
-  min-width: 300px;
+  min-width: 400px;
   max-width: 75%;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
