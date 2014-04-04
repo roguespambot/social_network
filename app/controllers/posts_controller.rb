@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
-    @author = Author.find(params[:id])
+    @recipient = Recipient.find(params[:id])
     render('posts/new.html.erb')
   end
 
@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to("/users/#{@post.recipient_id}/")
     else
-      @author = Author.find(params[:posts[:author_id]])
+      @recipient = Recipient.find(@post.recipient_id)
       render('posts/new.html.erb')
     end
   end

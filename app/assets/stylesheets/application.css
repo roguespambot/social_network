@@ -13,11 +13,54 @@
  *= require 'bootstrap'
  */
 
+body {
+  background-color: #99CCFF;
+}
+
+h1 {
+}
+
+.post {
+}
+
+.poster {
+  float: left;
+  margin-right: 2px;
+}
+
+.delete_post {
+  float: right;
+  margin-left: 2px;
+}
+
+a#poster {
+  color: green;
+}
+
 a#delete {
  color: red;
  text-decoration: none;
 }
 
+a#delete-friend {
+  color: red;
+  text-decoration: none;
+}
+
 .post-content {
-  background-color: grey;
+  background-color: #CCCCCC;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-width: 300px;
+  max-width: 75%;
+  padding: 2px;
+  padding-bottom: 20px;
+}
+
+.post-content2 {
+  padding: 2px;
+  background-color: #99CCFF;
+  min-width: 300px;
+  max-width: 75%;
+  padding-bottom: 20px;
 }

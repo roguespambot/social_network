@@ -1,24 +1,40 @@
 <h1><%= @user.name %></h1>
-<br/>
-<p><a href="/users/<%= @user.id %>/posts/">Create new blog post</a></p>
-<br/>
 
 <h3>Posts</h3>
-  <% @user.posts.each do |post| %>
-    <span class="post-content"><%= simple_format(post.content) %>
-    <a id="delete" href="/posts/<%= post.id %>"
-  data-confirm="Are you sure you want to delete this post?"
-  data-method="delete"
-  rel="nofollow"> [Delete Post]</a></span>
+
+  <% @user.posts.each_with_index do |post, index| %>
+    <% if index % 2 == 0  %>
+      <div class="post-content"><%= simple_format(post.content) %>
+
+    <% else %>
+      <div class="post-content2"><%= simple_format(post.content) %>
+    <% end %>
+
+    <div class="poster">
+        <p>Posted by:<a id="poster" href="/posts/<%= post.author.id %>"> <%= post.author.name %></a></p>
+      </div>
+
+      <div class="delete_post">
+        <a id="delete" href="/posts/<%= post.id %>"
+          data-confirm="Are you sure you want to delete this post?"
+          data-method="delete"
+          rel="nofollow">[Delete Post]
+        </a>
+      </div>
+
+    </div>
   <% end %>
-  <br />
+
+<br/>
+<p><a href="/users/<%= @user.id %>/posts/"><button>Add a post!</button></a></p>
+
 
 <h3>Friends</h3>
   <ul>
   <% @user.friends.each do |friend| %>
   <li><a href="/users/<%= friend.id %>"><%= friend.name %></a>
     <% friendship = Friendship.find_by(:friend_id => friend.id, :user_id => @user.id) %>
-    <a id="delete" href="/friendships/<%= friendship.id %>"
+    <a id="delete-friend" href="/friendships/<%= friendship.id %>"
   data-confirm="Are you sure you want to stop being friends with <%= friend.name%>?"
   data-method="delete"
   rel="nofollow"> [X]</a>

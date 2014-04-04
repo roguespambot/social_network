@@ -1,5 +1,13 @@
-<h2>New Blog Post by <%= @author.name%></h2>
-<% @recipient = @author %>
+<h2>New Post for <%= @recipient.name%></h2>
+
+<% if @post.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @post.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <form action="/posts/" method="post">
   <%= render('form') %>

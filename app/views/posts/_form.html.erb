@@ -1,4 +1,11 @@
-<input type="hidden" name="posts[author_id]" value="<%= @author.id %>">
 <input type="hidden" name="posts[recipient_id]" value="<%= @recipient.id %>">
+<select name="posts[author_id]">
+    <option selected disabled>Select your name</option>
+  <% @recipient.friends.each do |friend| %>
+    <option value="<%= friend.id %>"><%= friend.name %></option>
+  <% end %>
+</select>
+<br/>
+<br/>
 <textarea id="post_content" rows="15" cols="100" name="posts[content]" placeholder="What's on your mind?"><%= @post.content %></textarea>
 <br/>
