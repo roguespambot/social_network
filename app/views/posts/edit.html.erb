@@ -9,7 +9,8 @@
   </ul>
 <% end %>
 
-<form action="/posts/<%= @post.id %>/edit" method="post">
+<form action="/posts/<%= @post.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
   <%= render('form') %>
-  <button>Post!</button>
+  <button>Edit Post!</button>
 </form>

@@ -11,5 +11,15 @@ Network
 [+] As a user, I want to make blog posts on my own page.
 [+] As a user, I want to make posts on my friend's page.
 [+] As a user, I want to be able to delete a post.
-[-] As a user, I want to be able to edit a post.
+[+] As a user, I want to be able to edit a post.
+[-] As a user, I want to be able to add a profile picture.
+[-] As a user, I want to be able to like posts.
+
+Known Issues
+------------
+
+Editing a post changes the order on the wall without refreshing the timestamp of a post.
+Adding a friend without a name chosen results in an error.
+Users can input a blank field when editing their name.
+Add a post button occasionally moves.
 

@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.save
+    if @post.update(params[:posts])
       redirect_to("/users/#{@post.recipient_id}/")
     else
       @recipient = Recipient.find(@post.recipient_id)

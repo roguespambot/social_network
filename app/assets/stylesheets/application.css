@@ -13,6 +13,17 @@
  *= require 'bootstrap'
  */
 
+ul#friends_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px;
+}
+
+button#post {
+  margin-top: 10px;
+  text-decoration: none;
+}
+
 .poster {
   float: left;
   margin-right: 2px;
@@ -27,6 +38,9 @@ a#poster {
   color: green;
 }
 
+a#edit {
+  color: green;
+}
 a#delete {
  color: red;
  text-decoration: none;

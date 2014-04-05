@@ -11,7 +11,7 @@
     <% end %>
 
     <div class="poster">
-        <p>Posted by:<a id="poster" href="/posts/<%= post.author.id %>"> <%= post.author.name %></a><br /> on <%= post.created_at.strftime("%b %d, %Y at %I:%M %P GMT")  %> </p>
+        <p>Posted by:<a id="poster" href="/users/<%= post.author.id %>"> <%= post.author.name %></a><br /> on <%= post.created_at.strftime("%b %d, %Y at %I:%M %P GMT")  %> </p>
       </div>
 
       <div class="delete_post">
@@ -26,13 +26,11 @@
 
     </div>
   <% end %>
-
-<br/>
-<p><a href="/users/<%= @user.id %>/posts/"><button>Add a post!</button></a></p>
+<a href="/users/<%= @user.id %>/posts/"><button id="post">Add a post!</button></a>
 
 
 <h3>Friends</h3>
-  <ul>
+  <ul id="friends_list">
   <% @user.friends.each do |friend| %>
   <li><a href="/users/<%= friend.id %>"><%= friend.name %></a>
     <% friendship = Friendship.find_by(:friend_id => friend.id, :user_id => @user.id) %>
